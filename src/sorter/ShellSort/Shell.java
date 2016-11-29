@@ -4,7 +4,7 @@ import sorter.Sorter;
 
 public class Shell extends Sorter {
 
-	public Shell(int[] array) {
+	public Shell(Comparable[] array) {
 		super(array);
 		// TODO Auto-generated constructor stub
 	}
@@ -25,13 +25,13 @@ public class Shell extends Sorter {
 				indexK = j + inc;
 				while (indexK <= n) {
 					inserted=false;
-					int elemX = array[indexK];
+					Comparable elemX = array[indexK];
 					indexCurrent = indexK;
 					indexPrevius = indexCurrent - inc;				
 					
 					while (indexPrevius >= j && !inserted) {
 						counter++;
-						if (elemX < array[indexPrevius]) {
+						if (elemX.compareTo(array[indexPrevius])<0) {
 							array[indexCurrent] = array[indexPrevius];
 							indexCurrent = indexPrevius;
 							indexPrevius = indexPrevius - inc;
@@ -51,7 +51,7 @@ public class Shell extends Sorter {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] A = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
+		Integer[] A = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
 		Shell S = new Shell(A);
 
 		S.sort();

@@ -4,7 +4,7 @@ import sorter.Sorter;
 
 public class Merge extends Sorter {
 
-	public Merge(int[] array) {
+	public Merge(Comparable[] array) {
 		super(array);
 		// TODO Auto-generated constructor stub
 	}
@@ -15,8 +15,8 @@ public class Merge extends Sorter {
 		if (array.length <= 1)
 			return;
 
-		int[] first = new int[array.length / 2];
-		int[] second = new int[array.length - first.length];
+		Integer[] first = new Integer[array.length / 2];
+		Integer[] second = new Integer[array.length - first.length];
 		System.arraycopy(array, 0, first, 0, first.length);
 		System.arraycopy(array, first.length, second, 0, second.length);
 		Merge firstSorter = new Merge(first);
@@ -26,14 +26,14 @@ public class Merge extends Sorter {
 		merge(first, second);
 	}
 
-	private void merge(int[] first, int[] second) {
+	private void merge(Integer[] first, Integer[] second) {
 		int iFirst = 0;
 		int iSecond = 0;
 		int j = 0;
 		counter++;
 		while (iFirst < first.length && iSecond < second.length) {
 			counterSwap++;
-			if (first[iFirst] < second[iSecond]) {
+			if (first[iFirst].compareTo(second[iSecond])<0) {
 				array[j] = first[iFirst];
 				iFirst++;
 			} else {
@@ -50,7 +50,7 @@ public class Merge extends Sorter {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] A = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
+		Integer[] A = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
 		Merge M = new Merge(A);
 
 		M.sort();

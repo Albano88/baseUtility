@@ -4,7 +4,7 @@ import sorter.Sorter;
 
 public class Selection extends Sorter {
 
-	public Selection(int[] array) {
+	public Selection(Comparable[] array) {
 		super(array);
 		// TODO Auto-generated constructor stub
 	}
@@ -30,7 +30,7 @@ public class Selection extends Sorter {
 		int minPos = positions;
 		for (int i = positions + 1; i < array.length; i++) {
 			counter++;
-			if (array[i] < array[minPos]) {
+			if (array[i].compareTo(array[minPos])<0) {
 				minPos = i;
 			}
 		}
@@ -50,8 +50,8 @@ public class Selection extends Sorter {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int[] A = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
-		int[] A1 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
+		Integer[] A = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
+		Integer[] A1 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
 		Selection S = new Selection(A);
 		Selection S1 = new Selection(A1);
 		S.sort();

@@ -4,7 +4,7 @@ import sorter.Sorter;
 
 public class Bubble extends Sorter {
 
-	public Bubble(int[] array) {
+	public Bubble(Comparable[] array) {
 		super(array);
 		// TODO Auto-generated constructor stub
 	}
@@ -13,7 +13,7 @@ public class Bubble extends Sorter {
 		for (int i = 0; i < this.array.length; i++) {
 			for (int j = 0; j < this.array.length; j++) {
 				counter++;
-				if (array[j] > array[i]) {
+				if (array[j].compareTo(array[i])>0) {
 					//System.out.println(this.toString()); per visionare gli scambi;
 					swap(i, j);
 				}
@@ -27,7 +27,7 @@ public class Bubble extends Sorter {
 			swap = false;
 			for (int j = 0; j < this.array.length - 1; j++) {
 				counter++;
-				if (array[j] > array[j + 1]) {
+				if (array[j].compareTo(array[j + 1])>0) {
 					swap(j, j + 1);
 					swap = true;
 				}
@@ -37,8 +37,8 @@ public class Bubble extends Sorter {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] A = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
-		int[] A2 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
+		Integer[] A = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
+		Integer[] A2 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
 		Bubble B = new Bubble(A);
 		Bubble C = new Bubble(A2);
 

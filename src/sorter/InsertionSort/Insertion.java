@@ -4,7 +4,7 @@ import sorter.Sorter;
 
 public class Insertion extends Sorter {
 
-	public Insertion(int[] array) {
+	public Insertion(Comparable[] array) {
 		super(array);
 		// TODO Auto-generated constructor stub
 	}
@@ -13,9 +13,9 @@ public class Insertion extends Sorter {
 	public void sort() {
 		// TODO Auto-generated method stub
 		for (int i = 1; i < array.length; i++) {
-			int min = array[i];
+			Comparable min = array[i];
 			int j = i;
-			while (j > 0 && array[j - 1] > min) {
+			while (j > 0 && array[j - 1].compareTo(min)>0) {
 				array[j] = array[j - 1];
 				counterSwap++;
 				counter++;
@@ -31,7 +31,7 @@ public class Insertion extends Sorter {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] A = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
+		Integer[] A = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
 		Insertion I = new Insertion(A);
 
 		I.sort();

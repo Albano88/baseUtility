@@ -1,9 +1,9 @@
-package Binary;
+package binary;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Linear.LinearReserch;
+import linear.LinearReserch;
 import reserch.Reserch;
 
 public class BinaryReserch extends Reserch {

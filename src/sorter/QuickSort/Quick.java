@@ -1,10 +1,12 @@
 package sorter.QuickSort;
 
+import org.omg.CORBA.INTERNAL;
+
 import sorter.Sorter;
 
 public class Quick extends Sorter {
 
-	public Quick(int[] array) {
+	public Quick(Comparable[] array) {
 		super(array);
 		// TODO Auto-generated constructor stub
 	}
@@ -27,16 +29,16 @@ public class Quick extends Sorter {
 	
 	
 	public int partition(int from, int to) {
-		int pivot = array[from];
+		Comparable pivot = array[from];
 		int i = from - 1;
 		int j = to + 1;
 		while (i < j) {
 			i++;
-			while (array[i] < pivot){
+			while (array[i].compareTo(pivot) < 0){
 				counter++;
 				i++;}
 			j--;
-			while (array[j] > pivot){
+			while (array[j].compareTo(pivot)>0){
 				counter++;
 				j--;}
 			if (i < j) {
@@ -48,7 +50,7 @@ public class Quick extends Sorter {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] A = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
+		Integer[] A = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
 
 		Quick Q = new Quick(A);
 		Q.sort();

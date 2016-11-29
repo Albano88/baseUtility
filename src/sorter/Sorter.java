@@ -8,11 +8,11 @@ import sorter.ShellSort.Shell;
 
 public abstract class Sorter {
 
-	public int[] array;
+	public Comparable[] array;
 	public int counter;
 	public int counterSwap;
 
-	public Sorter(int[] array) {
+	public Sorter(Comparable[] array) {
 		super();
 		this.array = array;
 		this.counter = 0;
@@ -32,7 +32,7 @@ public abstract class Sorter {
 
 	protected void swap(int i, int j) {
 		counterSwap++;
-		int temp;
+		Comparable temp;
 		temp = array[i];
 		array[i] = array[j];
 		array[j] = temp;
@@ -40,12 +40,12 @@ public abstract class Sorter {
 
 	public static void main(String[] args) {
 
-		int[] A = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
-		int[] A2 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
-		int[] A3 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
-		int[] A4 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
-		int[] A5 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
-		int[] A6 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
+		Integer[] A = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
+		Integer[] A2 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
+		Integer[] A3 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
+		Integer[] A4 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
+		Integer[] A5 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
+		Integer[] A6 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
 		Bubble B = new Bubble(A);
 		Bubble B2 = new Bubble(A2);
 		Selection S = new Selection(A3);
