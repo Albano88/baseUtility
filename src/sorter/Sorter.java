@@ -2,6 +2,7 @@ package sorter;
 
 import sorter.BubbleSort.Bubble;
 import sorter.InsertionSort.Insertion;
+import sorter.MergeSort.Merge;
 import sorter.QuickSort.Quick;
 import sorter.SelectionSort.Selection;
 import sorter.ShellSort.Shell;
@@ -46,12 +47,14 @@ public abstract class Sorter {
 		Integer[] A4 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
 		Integer[] A5 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
 		Integer[] A6 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
+		Integer[] A7 = { 5, 8, 1, 7, 3, 5, 9, 7, 5 };
 		Bubble B = new Bubble(A);
 		Bubble B2 = new Bubble(A2);
 		Selection S = new Selection(A3);
 		Insertion I = new Insertion(A4);
 		Shell SH = new Shell(A5);
 		Quick Q = new Quick(A6);
+		Merge M= new Merge(A7);
 		B.sort();
 		System.out.println(B);
 		System.out.println("B ha effettuato " + B.counter + " confronti, scambi " + B.counterSwap);
@@ -81,5 +84,12 @@ public abstract class Sorter {
 		System.out.println(Q);
 		System.out.println("Q ha effettuato " + Q.counter + " confronti, scambi " + Q.counterSwap);
 		System.out.println("");
+		
+		M.sort();
+		System.out.println(M);
+		System.out.println("M ha effettuato " + M.counter + " confronti, scambi " + M.counterSwap);
+		System.out.println("");
+		
+		
 	}
 }
